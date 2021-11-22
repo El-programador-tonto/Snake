@@ -17,6 +17,10 @@
 	canvas {
 	    border: 1px solid teal;
 	}
+	#score { 
+		color: blue;
+		
+	}
 	</style>
 	</head>
 	<body>
@@ -101,11 +105,16 @@ function loop() {
   snake.cells.forEach(function(cell, index) {
 
     // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
-    context.fillRect(cell.x, cell.y, grid-1, grid-1);
+    context.fillRect(cell.x, cell.y, grid-1, grid-1); {
+	     snake.maxCells++;
+          score += 1;
+          document.getElementById('score').innerHTML = '&nbsp;' + score;
+    }
 
     // snake ate apple
     if (cell.x === apple.x && cell.y === apple.y) {
       snake.maxCells++;
+      
 
       // canvas is 400x400 which is 25x25 grids
       apple.x = getRandomInt(0, 25) * grid;
@@ -117,6 +126,9 @@ function loop() {
 
       // snake occupies same space as a body part. reset game (aka snake dead)
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+	      if (score > max) {
+              max = score;
+            }
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
@@ -159,10 +171,7 @@ document.addEventListener('keydown', function(e) {
     snake.dx = 0;
   }
 	
-  // if snake touches border
-	  if (snake.indexOf(n, 1) > 0 || n < 0 || n > 399 || fx == 1 && n % 20 == 0 || fx "GA== -1 && n % 20 == 19)
-                return alert(ME OVER!");
-	      }
+
 });
 
 // start the game
