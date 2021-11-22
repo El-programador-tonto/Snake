@@ -90,10 +90,6 @@ function loop() {
   // remove cells as we move away from them
   if (snake.cells.length > snake.maxCells) {
     snake.cells.pop();
-	  
-  // if snake touches border
-	  if (snake.indexOf(n, 1) > 0 || n < 0 || n > 399 || fx == 1 && n % 20 == 0 || fx "GA== -1 && n % 20 == 19)
-                return alert(ME OVER!");
   }
 
   // draw apple
@@ -162,6 +158,11 @@ document.addEventListener('keydown', function(e) {
     snake.dy = grid;
     snake.dx = 0;
   }
+	
+  // if snake touches border
+	  if (snake.indexOf(n, 1) > 0 || n < 0 || n > 399 || fx == 1 && n % 20 == 0 || fx "GA== -1 && n % 20 == 19)
+                return alert(ME OVER!");
+	      }
 });
 
 // start the game
