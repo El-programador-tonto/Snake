@@ -105,15 +105,15 @@ function loop() {
   snake.cells.forEach(function(cell, index) {
 
     // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
-    context.fillRect(cell.x, cell.y, grid-1, grid-1); {
-	     snake.maxCells++;
-          score += 1;
-          document.getElementById('score').innerHTML = '&nbsp;' + score;
-    }
+    context.fillRect(cell.x, cell.y, grid-1, grid-1);
+         
+    
 
     // snake ate apple
     if (cell.x === apple.x && cell.y === apple.y) {
       snake.maxCells++;
+      score += 1;
+      document.getElementById('score').innerHTML = '&nbsp;' + score;
       
 
       // canvas is 400x400 which is 25x25 grids
