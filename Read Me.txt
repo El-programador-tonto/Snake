@@ -1,0 +1,5 @@
+I made this when I was bored should run like a
+basic snake game. Was wondering how to add score
+board.
+
+if you have notice coding error please say in comments
